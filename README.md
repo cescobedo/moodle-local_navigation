@@ -21,7 +21,7 @@ git clone git@github.com:cescobedo/moodle-local_navigation.git local/navigation
 Download way
 - Download the zip from <https://github.com/cescobedo/moodle-local_navigation/archive/master.zip>
 - Unzip it into  local/ folder in your Moodle,
-- Rename the new folder "moodle-local_navigation" to "navigation"
+- Rename the new folder "moodle-local_navigation-master" to "navigation"
 - Enjoy!!!
 
 FUTURE SCOPE:
