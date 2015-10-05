@@ -28,4 +28,4 @@ $plugin->version   = 2014051300;
 $plugin->requires  = 2013111800;
 $plugin->component = 'local_navigation';
 $plugin->maturity = MATURITY_STABLE;
-$plugin->release = '1.0';
+$plugin->release = '1.1';
