@@ -32,7 +32,7 @@ Identical to that used in the custom menu at theme settings.
 <br>
 Example:
 <br>
-Moodle community|http://moodle.org
+Moodle community
 <br>
 -Moodle free support|http://moodle.org/support
 <br>
