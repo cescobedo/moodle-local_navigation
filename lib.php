@@ -58,12 +58,14 @@ function navigation_custom_menu_item(custom_menu_item $menunode, $parent, $pmast
         $submenucount++;
         $url = $CFG->wwwroot;
         if ($menunode->get_url() !== null) {
-            $url = $menunode->get_url();
+            $url = new moodle_url($menunode->get_url());
+        } else {
+            $url = null;
         }
         if ($parent > 0) {
-            $masternode = $pmasternode->add($menunode->get_text(), new moodle_url($url), navigation_node::TYPE_CONTAINER);
+            $masternode = $pmasternode->add($menunode->get_text(), $url, navigation_node::TYPE_CONTAINER);
         } else {
-            $masternode = $PAGE->navigation->add($menunode->get_text(), new moodle_url($url), navigation_node::TYPE_CONTAINER);
+            $masternode = $PAGE->navigation->add($menunode->get_text(), $url, navigation_node::TYPE_CONTAINER);
         }
         foreach ($menunode->get_children() as $menunode) {
             navigation_custom_menu_item($menunode, $submenucount, $masternode);
@@ -71,12 +73,14 @@ function navigation_custom_menu_item(custom_menu_item $menunode, $parent, $pmast
     } else {
         $url = $CFG->wwwroot;
         if ($menunode->get_url() !== null) {
-            $url = $menunode->get_url();
+            $url = new moodle_url($menunode->get_url());
+        } else {
+            $url = null;
         }
         if ($parent) {
-            $childnode = $pmasternode->add($menunode->get_text(), new moodle_url($url));
+            $childnode = $pmasternode->add($menunode->get_text(), $url);
         } else {
-            $masternode = $PAGE->navigation->add($menunode->get_text(), new moodle_url($url), navigation_node::TYPE_CONTAINER);
+            $masternode = $PAGE->navigation->add($menunode->get_text(), $url, navigation_node::TYPE_CONTAINER);
         }
     }
 
