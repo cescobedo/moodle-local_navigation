@@ -63,9 +63,11 @@ function navigation_custom_menu_item(custom_menu_item $menunode, $parent, $pmast
             $url = null;
         }
         if ($parent > 0) {
-            $masternode = $pmasternode->add($menunode->get_text(), $url, navigation_node::TYPE_CONTAINER);
+            $masternode = $pmasternode->add(local_navigation_get_string($menunode->get_text()), $url, navigation_node::TYPE_CONTAINER);
+            $masternode->title($menunode->get_title());
         } else {
-            $masternode = $PAGE->navigation->add($menunode->get_text(), $url, navigation_node::TYPE_CONTAINER);
+            $masternode = $PAGE->navigation->add(local_navigation_get_string($menunode->get_text()), $url, navigation_node::TYPE_CONTAINER);
+            $masternode->title($menunode->get_title());
         }
         foreach ($menunode->get_children() as $menunode) {
             navigation_custom_menu_item($menunode, $submenucount, $masternode);
@@ -78,11 +80,35 @@ function navigation_custom_menu_item(custom_menu_item $menunode, $parent, $pmast
             $url = null;
         }
         if ($parent) {
-            $childnode = $pmasternode->add($menunode->get_text(), $url);
+            $childnode = $pmasternode->add(local_navigation_get_string($menunode->get_text()), $url, navigation_node::TYPE_CUSTOM);
+            $childnode->title($menunode->get_title());
         } else {
-            $masternode = $PAGE->navigation->add($menunode->get_text(), $url, navigation_node::TYPE_CONTAINER);
+            $masternode = $PAGE->navigation->add(local_navigation_get_string($menunode->get_text()), $url, navigation_node::TYPE_CONTAINER);
+            $masternode->title($menunode->get_title());
         }
     }
 
     return true;
+}
+
+/**
+ * Translate Custom Navigation Nodes
+ *
+ * This function is based in a short peace of Moodle code
+ * in  Name processing on user_convert_text_to_menu_items.
+ *  
+ * @param string $string text to translate.
+ * @return string
+ */
+function local_navigation_get_string($string) {
+    $title = $string;
+    $text = explode(',', $string, 2);
+    if (count($text) == 2) {
+        // Check the validity of the identifier part of the string.
+        if (clean_param($text[0], PARAM_STRINGID) !== '') {
+            // Treat this as atext language string.
+            $title = get_string($text[0], $text[1]);
+        }
+    } 
+    return $title;
 }

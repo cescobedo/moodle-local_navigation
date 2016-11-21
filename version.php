@@ -24,8 +24,8 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-$plugin->version   = 2016022901;
+$plugin->version   = 2016110101;
 $plugin->requires  = 2014111000;
 $plugin->component = 'local_navigation';
 $plugin->maturity = MATURITY_STABLE;
-$plugin->release = '1.2';
+$plugin->release = '1.3';

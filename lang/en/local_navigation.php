@@ -30,6 +30,13 @@ $string['items'] = 'Custom Navigation items: ';
 $string['stritems'] = 'You can add custom items to the Navigation Menu using the following syntax.
 Identical to that used in the custom menu at theme settings.
 <br>
+Now you can add in the line a tooltip title (optional) and a language code or comma-separated list of codes (optional, for displaying the line to users of the specified language only), separated by pipe characters. 
+<br>
+So you can use Moodle translate in the first argument on the line using
+this way,   "langstringname, componentname".
+<br>
+For example:
+<br>
 Example:
 <br>
 Moodle community
@@ -38,9 +45,11 @@ Moodle community
 <br>
 -Moodle development|http://moodle.org/development
 <br>
---Moodle Tracker|http://tracker.moodle.org
+--Moodle Tracker|http://tracker.moodle.org|Bugs & features|en
 <br>
 --Moodle Docs|http://docs.moodle.org
+<br>
+---grade,grades|https://docs.moodle.org/31/en/Grades|Docs about grades|en,es
 <br>
 -Moodle News|http://moodle.org/news
 <br>

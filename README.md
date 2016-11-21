@@ -8,7 +8,7 @@ This plugin allow add new menu items at the end of Navigation Menu in order to c
 
 Version  
 -------
-Moodle 2.8+; 2.9+ , 3.0+, 3.1+ and 3.2+
+Moodle 2.8+; 2.9+ , 3.0+ and 3.1+
 
 TO INSTALL:
 
@@ -24,9 +24,10 @@ Download way
 - Rename the new folder "moodle-local_navigation-master" to "navigation"
 - Enjoy!!!
 
-FUTURE SCOPE:
-- Check syntax new items.
-- Hide core items in navigation menu.
+New features
+- Add a tooltip into menu nodes.
+- Add language code for displaying the line to users of the specified language only.
+- Add support to use Moodle translate in the first argument on the line using this way,   "langstringname, componentname".
 
 Author
 ------
