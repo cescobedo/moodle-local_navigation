@@ -28,6 +28,8 @@ if ($hassiteconfig) {
     $settings = new admin_settingpage('local_navigation', get_string('pluginname', 'local_navigation'));
     $settings->add(new admin_setting_configcheckbox('local_navigation/enabled', get_string('activate', 'local_navigation'),
         get_string('stractivate', 'local_navigation'), 0));
+    $settings->add(new admin_setting_configcheckbox('local_navigation/flatenabled', get_string('flatenabled', 'local_navigation'),
+        get_string('strflatenabled', 'local_navigation'), 0));
     $settings->add(new admin_setting_configtextarea('local_navigation/menuitems',
         get_string('items', 'local_navigation'), get_string('stritems', 'local_navigation'), '', PARAM_RAW));
 
