@@ -34,7 +34,7 @@ function local_navigation_extend_navigation(global_navigation $navigation) {
         $menu = new custom_menu($settings->menuitems, current_language());
         if ($menu->has_children()) {
             foreach ($menu->get_children() as $item) {
-                navigation_custom_menu_item($item, 0, null,$se ttings->flatenabled);
+                navigation_custom_menu_item($item, 0, null, $settings->flatenabled);
             }
         }
     }
