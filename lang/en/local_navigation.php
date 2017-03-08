@@ -58,3 +58,5 @@ Moodle company
 -Moodle commercial hosting|http://moodle.com/hosting
 <br>
 -Moodle commercial support|http://moodle.com/support';
+$string['flatenabled'] = 'Enabled Master nodes in Boost Navigation';
+$string['strflatenabled'] = 'Enables add new mater items in Boost Navigation Menu at the end.';

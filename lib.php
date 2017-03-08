@@ -34,7 +34,7 @@ function local_navigation_extend_navigation(global_navigation $navigation) {
         $menu = new custom_menu($settings->menuitems, current_language());
         if ($menu->has_children()) {
             foreach ($menu->get_children() as $item) {
-                navigation_custom_menu_item($item, 0, null);
+                navigation_custom_menu_item($item, 0, null,$se ttings->flatenabled);
             }
         }
     }
@@ -47,9 +47,10 @@ function local_navigation_extend_navigation(global_navigation $navigation) {
  * @param object $navigation global_navigation
  * @param int $parent is have a parent and it's parent itself
  * @param object $pmasternode parent node
+ * @param int $flatenabled show master node in boost navigation
  * @return void
  */
-function navigation_custom_menu_item(custom_menu_item $menunode, $parent, $pmasternode) {
+function navigation_custom_menu_item(custom_menu_item $menunode, $parent, $pmasternode, $flatenabled) {
     global $PAGE, $CFG;
 
     static $submenucount = 0;
@@ -68,9 +69,12 @@ function navigation_custom_menu_item(custom_menu_item $menunode, $parent, $pmast
         } else {
             $masternode = $PAGE->navigation->add(local_navigation_get_string($menunode->get_text()), $url, navigation_node::TYPE_CONTAINER);
             $masternode->title($menunode->get_title());
+            if ($flatenabled) {
+                $masternode->showinflatnavigation = true;
+            }
         }
         foreach ($menunode->get_children() as $menunode) {
-            navigation_custom_menu_item($menunode, $submenucount, $masternode);
+            navigation_custom_menu_item($menunode, $submenucount, $masternode, $flatenabled);
         }
     } else {
         $url = $CFG->wwwroot;
@@ -85,6 +89,9 @@ function navigation_custom_menu_item(custom_menu_item $menunode, $parent, $pmast
         } else {
             $masternode = $PAGE->navigation->add(local_navigation_get_string($menunode->get_text()), $url, navigation_node::TYPE_CONTAINER);
             $masternode->title($menunode->get_title());
+            if ($flatenabled) {
+                $masternode->showinflatnavigation = true;
+            }
         }
     }
 
