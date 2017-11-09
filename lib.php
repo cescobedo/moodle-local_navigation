@@ -47,7 +47,7 @@ function local_navigation_extend_navigation(global_navigation $navigation) {
  * ADD custom menu in navigation recursive childs node
  * Is like render custom menu items
  *
- * @param custom_menu_item menunode {@link custom_menu_item}
+ * @param custom_menu_item $menunode {@link custom_menu_item}
  * @param int $parent is have a parent and it's parent itself
  * @param object $pmasternode parent node
  * @param int $flatenabled show master node in boost navigation
