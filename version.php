@@ -20,6 +20,7 @@
  * @package    local_navigation
  * @author     Carlos Escobedo <http://www.twitter.com/carlosagile>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @copyright  2017 Carlos Escobedo <http://www.twitter.com/carlosagile>)
  */
 
 defined('MOODLE_INTERNAL') || die;

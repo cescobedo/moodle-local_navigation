@@ -20,6 +20,7 @@
  * @package    local_navigation
  * @author     Carlos Escobedo <http://www.twitter.com/carlosagile>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @copyright  2017 Carlos Escobedo <http://www.twitter.com/carlosagile>)
  */
 
 // Plugin Name.
@@ -30,7 +31,7 @@ $string['items'] = 'Custom Navigation items: ';
 $string['stritems'] = 'You can add custom items to the Navigation Menu using the following syntax.
 Identical to that used in the custom menu at theme settings.
 <br>
-Now you can add in the line a tooltip title (optional) and a language code or comma-separated list of codes (optional, for displaying the line to users of the specified language only), separated by pipe characters. 
+Now you can add in the line a tooltip title (optional) and a language code or comma-separated list of codes (optional, for displaying the line to users of the specified language only), separated by pipe characters.
 <br>
 So you can use Moodle translate in the first argument on the line using
 this way,   "langstringname, componentname".

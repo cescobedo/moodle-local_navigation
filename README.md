@@ -8,7 +8,7 @@ This plugin allow add new menu items at the end of Navigation Menu in order to c
 
 Version  
 -------
-Moodle 3.2+ and 3.3+
+Moodle 3.4+ , 3.3+ and 3.2+
 
 TO INSTALL:
 
@@ -35,4 +35,3 @@ Author
 Carlos Escobedo
 - <http://www.twitter.com/carlosagile>
 - <https://coderwall.com/carlosagile>
-
