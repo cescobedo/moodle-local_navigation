@@ -8,7 +8,7 @@ This plugin allow add new menu items at the end of Navigation Menu in order to c
 
 Version  
 -------
-Moodle 3.4+ , 3.3+ and 3.2+
+Moodle 3.5+, 3.4+ , 3.3+ and 3.2+
 
 TO INSTALL:
 
@@ -25,6 +25,7 @@ Download way
 - Enjoy!!!
 
 New features
+- Privacy Subsystem implementation for auth_dev. <https://docs.moodle.org/dev/Privacy_API>
 - Add master nodes in Boost Menu Navigation.
 - Add a tooltip into menu nodes.
 - Add language code for displaying the line to users of the specified language only.

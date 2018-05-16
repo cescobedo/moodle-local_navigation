@@ -13,20 +13,33 @@
 //
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
-
 /**
- * Add new custom options in Navigation Menu.
+ * Privacy Subsystem implementation for local_navigation.
  *
  * @package    local_navigation
  * @author     Carlos Escobedo <http://www.twitter.com/carlosagile>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- * @copyright  2017 Carlos Escobedo <http://www.twitter.com/carlosagile>)
+ * @copyright  2018 Carlos Escobedo <http://www.twitter.com/carlosagile>)
  */
+namespace local_navigation\privacy;
+defined('MOODLE_INTERNAL') || die();
+/**
+ * Privacy Subsystem for local_navigation implementing null_provider.
+ *
+ * @copyright  2018 Carlos Escobedo <carlos@moodle.com>
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+class provider implements \core_privacy\local\metadata\null_provider {
+    // This trait must be included.
+    use \core_privacy\local\legacy_polyfill;
 
-defined('MOODLE_INTERNAL') || die;
-
-$plugin->version   = 2018051600;
-$plugin->requires  = 2016120500;
-$plugin->component = 'local_navigation';
-$plugin->maturity = MATURITY_STABLE;
-$plugin->release = '1.5';
+    /**
+     * Get the language string identifier with the component's language
+     * file to explain why this plugin stores no data.
+     *
+     * @return  string
+     */
+    public static function _get_reason() {
+        return 'privacy:metadata';
+    }
+}

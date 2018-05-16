@@ -61,3 +61,4 @@ Moodle company
 -Moodle commercial support|http://moodle.com/support';
 $string['flatenabled'] = 'Enabled Master nodes in Boost Navigation';
 $string['strflatenabled'] = 'Enables add new master items in Boost Navigation Menu at the end.';
+$string['privacy:metadata'] = 'The Custom Navigation plugin does not store any personal data.';
